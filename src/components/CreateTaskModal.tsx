@@ -12,18 +12,23 @@ function CreateTaskModal() {
   const { isTaskModalOpen, setIsTaskModalOpen } = useContext(GeneralContext);
   const dispatch = useDispatch();
   const [taskData, setTaskData] = useState<OPTask>({
+    name: "",
     createdAt: String(Date.now()),
     status: false,
   } as OPTask);
 
   const handleCreateTask = async () => {
-    if (!taskData.name) {
+    if (!taskData.name && taskData.name === "") {
       toast.error("Task name is required");
       return;
     }
     dispatch(createTask(taskData));
     await creatingTask(taskData).then(() => {
-      setTaskData({} as OPTask);
+      setTaskData({
+        name: "",
+        createdAt: String(Date.now()),
+        status: false,
+      } as OPTask);
       setIsTaskModalOpen(false);
     });
     toast.success("Task created");
@@ -40,6 +45,7 @@ function CreateTaskModal() {
         <input
           type="text"
           placeholder="Task Name"
+          value={taskData.name}
           onChange={(e) => setTaskData({ ...taskData, name: e.target.value })}
           className="rounded-xl bg-slate-600 p-3 text-violet-100 outline-none outline"
         />

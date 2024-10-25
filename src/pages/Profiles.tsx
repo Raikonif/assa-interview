@@ -1,23 +1,21 @@
-import { useProfiles } from "@/hooks/useProfiles.tsx";
 import convertToNaturalDate from "@/helpers/convertToNaturalDate.ts";
 import BtnGoBack from "@/components/BtnGoBack.tsx";
-import { RootState } from "@/redux/store.ts";
-import { useDispatch, useSelector } from "react-redux";
-import { readElements } from "@/redux/elementsSlice.ts";
+import { RootState, useAppDispatch } from "@/redux/store.ts";
+import { useSelector } from "react-redux";
+import { fetchProfiles } from "@/redux/elementsSlice.ts";
 import { useEffect } from "react";
-import { getProfiles } from "@/service/profiles.service.ts";
 
 function Profiles() {
-  const profs = useProfiles();
   const profiles = useSelector((state: RootState) => state.elements);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    getProfiles().then((response) => {
-      dispatch(readElements(response.data));
-    }).catch((err) => {
-      console.error(err);
-    });
+    dispatch(fetchProfiles());
+    // getProfiles().then((response) => {
+    //   dispatch(readElements(response.data));
+    // }).catch((err) => {
+    //   console.error(err);
+    // });
   }, [dispatch]);
 
   return (
@@ -30,11 +28,11 @@ function Profiles() {
         </div>
       </div>
       <div className="flex h-full items-center justify-center">
-        {profs.profilesQuery.isLoading && <p className="text-slate-100">Loading data...</p>}
-        {profs.profilesQuery.data?.length === 0 && (
+        {profiles.isLoading && <p className="text-slate-100">Loading data...</p>}
+        {!profiles.isLoading && profiles.data?.length === 0 && (
           <p className="text-slate-100">No profiles found...</p>
         )}
-        {profs.profilesQuery.isError && <p className="text-slate-100">Error...</p>}
+        {profiles.error && <p className="text-slate-100">Error...</p>}
       </div>
       <ul className="mt-6 flex flex-col justify-center md:mt-10 md:flex-row md:flex-wrap">
         {profiles &&

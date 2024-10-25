@@ -2,7 +2,8 @@ import { useTasks } from "@/hooks/useTasks.tsx";
 import { FaPlus } from "react-icons/fa";
 import { useContext, useEffect } from "react";
 import GeneralContext from "@/context/GeneralContext.tsx";
-import { getTasks, updateTask } from "@/service/task.service.ts";
+import { getTasks, updateTask as updatingTask } from "@/service/task.service.ts";
+import { updateTask } from "@/redux/tasksSlice.ts";
 import { Task } from "@/interfaces/task.interface.ts";
 import BtnGoBack from "@/components/BtnGoBack.tsx";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,8 +18,8 @@ function Tasks() {
 
   const handleTaskStatus = async (task: Task) => {
     const updatedTask = { ...task, status: !task.status };
-    await updateTask(updatedTask);
-    tasks.forceRefetch();
+    dispatch(updateTask(updatedTask));
+    await updatingTask(updatedTask);
   };
 
   useEffect(() => {
@@ -43,14 +44,14 @@ function Tasks() {
       </div>
       {(tasks.tasksQuery.isLoading || tasks.tasksQuery.error || tasks.tasksQuery.data?.length === 0) &&
         <div className="flex items-center h-full justify-center">
-          {tasks.tasksQuery.isLoading && <p className="text-center text-slate-100">Loading...</p>}
+          {tasks.tasksQuery.isLoading && <p className="text-center text-slate-100">Loading Tasks...</p>}
           {tasks.tasksQuery.data?.length === 0 && <p className="text-center text-slate-100">No tasks</p>}
           {tasks.tasksQuery.isError && <p className="text-center text-slate-100">Error</p>}
         </div>}
       <ul className="mt-4 pt-4">
         {taskss &&
           taskss.data.map((task) => (
-            <li key={task.id} className="m-3">
+            <li key={task.createdAt} className="m-3">
               <div className="flex gap-4 rounded-full bg-slate-600 p-4 text-white">
                 <input
                   type="checkbox"

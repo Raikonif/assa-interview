@@ -20,10 +20,10 @@ const tasksSlice = createSlice({
       state.data = action.payload;
     },
     updateTask: (state, action) => {
-      const { id, name } = action.payload;
+      const { id, status } = action.payload;
       const task: Task | undefined = state.data.find((task) => task.id === id);
       if (task) {
-        task.name = name;
+        task.status = status;
       }
     },
     deleteTask: (state, action) => {
