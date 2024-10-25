@@ -18,8 +18,6 @@ function Profiles() {
     }).catch((err) => {
       console.error(err);
     });
-    // if (profs.profilesQuery.data)
-    //   dispatch(readElements(profs.profilesQuery.data));
   }, [dispatch]);
 
   return (

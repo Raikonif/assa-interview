@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getTasks } from "@/service/task.service.ts";
 import { Task } from "@/interfaces/task.interface.ts";
 
-const getAllElements = async (): Promise<Task[]> => {
+const getAllTasks = async (): Promise<Task[]> => {
   const { data } = await getTasks();
   console.log("data", data);
   return data;
@@ -11,7 +11,7 @@ const getAllElements = async (): Promise<Task[]> => {
 function useTasks() {
   const tasksQuery = useQuery({
     queryKey: ["tasks"],
-    queryFn: () => getAllElements(),
+    queryFn: () => getAllTasks(),
     staleTime: 1000 * 60 * 5,
   });
   const forceRefetch = () => {

@@ -48,8 +48,7 @@ function Tasks() {
           {tasks.tasksQuery.isError && <p className="text-center text-slate-100">Error</p>}
         </div>}
       <ul className="mt-4 pt-4">
-        {tasks.tasksQuery.data &&
-          tasks.tasksQuery.data?.length > 0 &&
+        {taskss &&
           taskss.data.map((task) => (
             <li key={task.id} className="m-3">
               <div className="flex gap-4 rounded-full bg-slate-600 p-4 text-white">

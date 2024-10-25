@@ -4,7 +4,7 @@ import { OPTask, Task } from "@/interfaces/task.interface.ts";
 
 const getTasks = async () => {
   try {
-    return await axios.get<Task>(`${BACKEND_MOCK_URL}/tasks`);
+    return await axios.get<Task[]>(`${BACKEND_MOCK_URL}/tasks`);
   } catch (error) {
     console.error("Error getting tasks", error);
     throw error;
