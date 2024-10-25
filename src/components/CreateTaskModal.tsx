@@ -1,25 +1,31 @@
 import BaseModal from "@/components/BaseModal.tsx";
 import { useContext, useRef, useState } from "react";
 import GeneralContext from "@/context/GeneralContext.tsx";
-import { createTask } from "@/service/task.service.ts";
+import { createTask } from "@/redux/tasksSlice.ts";
+import { createTask as creatingTask } from "@/service/task.service.ts";
 import { OPTask } from "@/interfaces/task.interface.ts";
 import toast from "react-hot-toast";
-import { useTasks } from "@/hooks/useTasks.tsx";
+import { useDispatch } from "react-redux";
 
 function CreateTaskModal() {
   const modalRef = useRef(null);
   const { isTaskModalOpen, setIsTaskModalOpen } = useContext(GeneralContext);
-  const [taskData, setTaskData] = useState<OPTask>({} as OPTask);
-  const { forceRefetch } = useTasks();
+  const dispatch = useDispatch();
+  const [taskData, setTaskData] = useState<OPTask>({
+    createdAt: String(Date.now()),
+    status: false,
+  } as OPTask);
+
   const handleCreateTask = async () => {
     if (!taskData.name) {
       toast.error("Task name is required");
       return;
     }
-    setTaskData({ ...taskData, createdAt: String(Date.now()), status: false });
-    await createTask(taskData);
-    setIsTaskModalOpen(false);
-    forceRefetch();
+    dispatch(createTask(taskData));
+    await creatingTask(taskData).then(() => {
+      setTaskData({} as OPTask);
+      setIsTaskModalOpen(false);
+    });
     toast.success("Task created");
   };
 
