@@ -1,0 +1,47 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Task 1",
+      "status": false,
+      "createdAt": "2021-07-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Task 2",
+      "description": "Description 2",
+      "status": false,
+      "createdAt": "2021-07-02T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Task 3",
+      "status": false,
+      "createdAt": "2021-07-03T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Task 4",
+      "status": false,
+      "createdAt": "2021-07-05T00:00:00.000Z"
+    },
+    {
+      "createdAt": "1729819545991",
+      "status": false,
+      "name": "sdfsdfsdf",
+      "id": 6
+    },
+    {
+      "name": "asdfasdf",
+      "createdAt": "1729819743201",
+      "status": false,
+      "id": 7
+    },
+    {
+      "name": "nueva tarea",
+      "createdAt": "1729819821236",
+      "status": false,
+      "id": 8
+    }
+  ]
+}
