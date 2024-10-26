@@ -29,4 +29,13 @@ const updateTask = async (task: OPTask) => {
   }
 };
 
-export { getTasks, createTask, updateTask };
+const deleteTask = async (task: Task) => {
+  try {
+    return await axios.delete(`${BACKEND_MOCK_URL}/tasks/${task.id}`);
+  } catch (error) {
+    console.error("Error deleting task", error);
+    throw error;
+  }
+};
+
+export { getTasks, createTask, updateTask, deleteTask };

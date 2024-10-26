@@ -1,89 +1,40 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "name": "Task 1",
+      "name": "Planchar Ropa",
+      "createdAt": "1729899075151",
+      "status": false,
+      "id": 3
+    },
+    {
+      "name": "Tarea creada con Enter",
+      "createdAt": "1729899525553",
+      "status": false,
+      "id": 4
+    },
+    {
+      "name": "Terminar Tareas Pendientes",
+      "createdAt": "1729899575689",
+      "status": false,
+      "id": 5
+    },
+    {
+      "name": "Ir al Mercado",
+      "createdAt": "1729899617594",
       "status": true,
-      "createdAt": "2021-07-01T00:00:00.000Z"
-    },
-    {
-      "id": 2,
-      "name": "Task 2",
-      "description": "Description 2",
-      "status": false,
-      "createdAt": "2021-07-02T00:00:00.000Z"
-    },
-    {
-      "id": 3,
-      "name": "Task 3",
-      "status": false,
-      "createdAt": "2021-07-03T00:00:00.000Z"
-    },
-    {
-      "id": 5,
-      "name": "Task 4",
-      "status": false,
-      "createdAt": "2021-07-05T00:00:00.000Z"
-    },
-    {
-      "createdAt": "1729819545991",
-      "status": false,
-      "name": "sdfsdfsdf",
       "id": 6
     },
     {
-      "name": "asdfasdf",
-      "createdAt": "1729819743201",
+      "name": "Pagar Servicios",
+      "createdAt": "1729899663848",
       "status": false,
       "id": 7
     },
     {
-      "name": "nueva tarea",
-      "createdAt": "1729819821236",
-      "status": false,
+      "name": "Terminar Tareas",
+      "createdAt": "1729899683297",
+      "status": true,
       "id": 8
-    },
-    {
-      "createdAt": "1729876241079",
-      "status": false,
-      "name": "sdfsaaaaaaa",
-      "id": 9
-    },
-    {
-      "createdAt": "1729876762871",
-      "status": false,
-      "name": "sss",
-      "id": 10
-    },
-    {
-      "name": "gggg",
-      "createdAt": "1729876895530",
-      "status": false,
-      "id": 11
-    },
-    {
-      "createdAt": "1729879829099",
-      "status": false,
-      "name": "asdf",
-      "id": 12
-    },
-    {
-      "name": "sdf",
-      "createdAt": "1729879886973",
-      "status": false,
-      "id": 13
-    },
-    {
-      "name": "asd",
-      "createdAt": "1729879925585",
-      "status": false,
-      "id": 14
-    },
-    {
-      "name": "sfdsf",
-      "createdAt": "1729879955337",
-      "status": false,
-      "id": 15
     }
   ]
 }

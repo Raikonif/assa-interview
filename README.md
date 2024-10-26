@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+# ASSA Interview React + Redux + Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this project, I have created a simple React + Redux application that fetches data from
+the [MOCK API IO](https://6172cfe5110a740017222e2b.mockapi.io/elements/) API and Json Server to mock a database for
+Tasks CRU operations and displays it as a list of task or profiles elements. The application
+uses [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-Currently, two official plugins are available:
+## Run Instructions for the project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Execute the next commands lines in a terminal to `Run Project` like this:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```
+yarn
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Then execute this command line in another terminal to up `Mocked Database` like this:
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
 ```
+json-server --watch db.json
+```
+
+- Open your browser and go to `http://localhost:5173/` to see the project running.
+- Open your browser and go to `http://localhost:3000/` to see the mocked database running.
+
+## Features
+
+- Fetch data from the [MOCK API IO](https://6172cfe5110a740017222e2b.mockapi.io/elements/) API.
+- Fetch data from the Json Server to mock a database for Tasks CRU operations.
+- Display the fetched data as a list of task or profiles elements.
+- Add a new task or profile element.
+- Edit an existing task.
