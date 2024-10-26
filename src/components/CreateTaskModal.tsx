@@ -7,11 +7,7 @@ import { OPTask } from "@/interfaces/task.interface.ts";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { FaCircleNotch } from "react-icons/fa";
-/* eslint-disable */
-/* eslint-disable-next-line import/named */
 import { v4 as uuidv4 } from "uuid";
-
-/* eslint-enable */
 
 function CreateTaskModal() {
   const randomId = uuidv4();
