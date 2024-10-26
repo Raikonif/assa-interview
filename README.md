@@ -20,8 +20,15 @@ yarn dev
 json-server --watch db.json
 ```
 
+- To execute `Tests` run this command line in a terminal:
+
+```
+npx vitest
+```
+
 - Open your browser and go to `http://localhost:5173/` to see the project running.
 - Open your browser and go to `http://localhost:3000/` to see the mocked database running.
+- You can see the tests results in the terminal.
 
 ## Features
 
@@ -30,3 +37,16 @@ json-server --watch db.json
 - Display the fetched data as a list of task or profiles elements.
 - Add a new task or profile element.
 - Edit an existing task.
+
+## Technologies Used
+
+- React
+- TypeScript
+- React Router Dom
+- React Query
+- Vitest/Jest
+- Redux
+- Redux Toolkit
+- Tailwind CSS
+- Axios
+- Json Server
