@@ -71,7 +71,7 @@ function CreateTaskModal() {
           setTaskData({ ...taskData, createdAt: String(Date.now()), status: false })
         }
         onClick={() => handleCreateTask()}
-        className="rounded-b-xl bg-violet-700 p-3 text-violet-100 hover:bg-violet-600 active:bg-violet-500"
+        className="flex items-center justify-center rounded-b-xl bg-violet-700 p-3 text-violet-100 hover:bg-violet-600 active:bg-violet-500"
       >
         Create <FaCircleNotch className={`${!isProcessing && "hidden"}`} />
       </button>

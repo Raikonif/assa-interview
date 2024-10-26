@@ -13,12 +13,6 @@
       "id": 4
     },
     {
-      "name": "Terminar Tareas Pendientes",
-      "createdAt": "1729899575689",
-      "status": false,
-      "id": 5
-    },
-    {
       "name": "Ir al Mercado",
       "createdAt": "1729899617594",
       "status": true,
@@ -29,12 +23,6 @@
       "createdAt": "1729899663848",
       "status": false,
       "id": 7
-    },
-    {
-      "name": "Terminar Tareas",
-      "createdAt": "1729899683297",
-      "status": true,
-      "id": 8
     }
   ]
 }

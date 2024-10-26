@@ -14,8 +14,11 @@ function Profiles() {
   }, [dispatch]);
 
   const renderProfiles = (profile) => (
-    <li key={profile.id} className="m-3">
-      <div className="flex items-center gap-5 rounded-xl bg-sky-900 p-4">
+    <li
+      key={profile.id}
+      className="m-3 transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-105"
+    >
+      <div className="flex items-center gap-5 rounded-xl bg-slate-700 p-4">
         <img
           src={"https://images.pexels.com/photos/7071988/pexels-photo-7071988.jpeg"}
           alt={profile.name}

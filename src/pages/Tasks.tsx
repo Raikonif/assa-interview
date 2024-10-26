@@ -10,6 +10,7 @@ import BtnGoBack from "@/components/BtnGoBack.tsx";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store.ts";
 import { readTasks } from "@/redux/tasksSlice.ts";
+import toast from "react-hot-toast";
 
 function Tasks() {
   const tasks = useTasks();
@@ -24,8 +25,9 @@ function Tasks() {
   };
 
   const handleDeleteTask = async (task: Task) => {
-    dispatch(deleteTask(task.id));
     await deletingTask(task);
+    dispatch(deleteTask(task.id));
+    toast.success("Task deleted");
   };
 
   useEffect(() => {
@@ -66,7 +68,7 @@ function Tasks() {
       <ul className="mt-4 pt-4">
         {taskss &&
           taskss.data.map((task) => (
-            <li key={task.createdAt} className="m-3">
+            <li key={task.createdAt} className="m-3 hover:animate-pulse">
               <div className="flex items-center gap-4 rounded-lg bg-slate-600 p-4 text-white">
                 {!task.status ? (
                   <FaRegCircle onClick={() => handleTaskStatus(task)} className="cursor-pointer" />
